@@ -151,11 +151,11 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold shadow-xl shadow-emerald-200 hover:bg-emerald-700 transition-all flex items-center gap-2 group"
               >
-                Buat Website Sekarang
+                Konsultasi Sekarang
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <button className="px-8 py-4 bg-white text-zinc-900 border border-zinc-200 rounded-full font-bold hover:bg-zinc-50 transition-all shadow-sm">
-                Lihat Demo Listing
+                Lihat Paket
               </button>
             </div>
 
@@ -208,57 +208,6 @@ export default function App() {
           </motion.div>
         </div>
       </section>
-
-      {/* Features Section */}
-      <section id="layanan" className="py-24 bg-zinc-50 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-emerald-600 font-bold tracking-widest text-xs uppercase mb-3 block">Fitur Unggulan</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Teknologi Terbaik untuk Penjualan Aset</h2>
-            <p className="text-zinc-600 max-w-2xl mx-auto">
-              Website yang kami bangun didesain khusus untuk memudahkan calon pembeli mengeksplorasi setiap sudut properti Anda.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Layout className="text-emerald-600" />,
-                title: 'Property Management',
-                desc: 'Kelola listing rumah, vila, atau tanah dengan mudah melalui dashboard yang user-friendly.'
-              },
-              {
-                icon: <MapPin className="text-emerald-600" />,
-                title: 'Google Maps Integration',
-                desc: 'Tampilkan lokasi akurat properti Anda lengkap dengan area fasilitas umum terdekat.'
-              },
-              {
-                icon: <Camera className="text-emerald-600" />,
-                title: 'High-Res Gallery',
-                desc: 'Optimasi gambar agar tetap tajam namun ringan, memastikan visual properti tampil maksimal.'
-              },
-              {
-                icon: <Settings className="text-emerald-600" />,
-                title: 'Smart Search & Filter',
-                desc: 'Mudahkan klien mencari properti berdasarkan harga, lokasi, atau tipe bangunan.'
-              }
-            ].map((feature, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl border border-zinc-100 shadow-sm transition-all"
-              >
-                <div className="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center mb-8">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-zinc-600 text-sm leading-relaxed">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Showcase Section */}
       <section id="tentang" className="py-24 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -322,6 +271,56 @@ export default function App() {
         </div>
       </section>
 
+
+      {/* Features Section */}
+      <section id="layanan" className="py-24 bg-zinc-50 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 font-bold tracking-widest text-xs uppercase mb-3 block">Fitur Unggulan</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Teknologi Terbaik untuk Penjualan Aset</h2>
+            <p className="text-zinc-600 max-w-2xl mx-auto">
+              Website yang kami bangun didesain khusus untuk memudahkan calon pembeli mengeksplorasi setiap sudut properti Anda.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Layout className="text-emerald-600" />,
+                title: 'Property Management',
+                desc: 'Kelola listing rumah, vila, atau tanah dengan mudah melalui dashboard yang user-friendly.'
+              },
+              {
+                icon: <MapPin className="text-emerald-600" />,
+                title: 'Google Maps Integration',
+                desc: 'Tampilkan lokasi akurat properti Anda lengkap dengan area fasilitas umum terdekat.'
+              },
+              {
+                icon: <Camera className="text-emerald-600" />,
+                title: 'High-Res Gallery',
+                desc: 'Optimasi gambar agar tetap tajam namun ringan, memastikan visual properti tampil maksimal.'
+              },
+              {
+                icon: <Settings className="text-emerald-600" />,
+                title: 'Smart Search & Filter',
+                desc: 'Mudahkan klien mencari properti berdasarkan harga, lokasi, atau tipe bangunan.'
+              }
+            ].map((feature, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -5 }}
+                className="bg-white p-8 rounded-2xl border border-zinc-100 shadow-sm transition-all"
+              >
+                <div className="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center mb-8">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Pricing Section */}
       <section id="harga" className="py-24 bg-zinc-900 text-white px-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px]"></div>
