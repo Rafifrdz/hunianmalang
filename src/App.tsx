@@ -177,7 +177,7 @@ export default function App() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-100 h-[400px] md:h-[550px] group">
               <img
-                src="public/Villa bambu.jpg"
+                src="/Villa bambu.jpg"
                 alt="Luxury Modern Villa"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -265,18 +265,18 @@ export default function App() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img src="public/lantai 1 (8).jpg" className="w-full h-full object-cover" alt="Modern House" />
+                <img src="/lantai 1 (8).jpg" className="w-full h-full object-cover" alt="Modern House" />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="public/meeting.jpg" className="w-full h-full object-cover" alt="Villa Interior" />
+                <img src="/Meeting.jpg" className="w-full h-full object-cover" alt="Villa Interior" />
               </div>
             </div>
             <div className="space-y-4 pt-12">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="public/Villa bambu.jpg" className="w-full h-full object-cover" alt="Kitchen Design" />
+                <img src="/Villa bambu.jpg" className="w-full h-full object-cover" alt="Kitchen Design" />
               </div>
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img src="public/lantai 2 (4).jpg" className="w-full h-full object-cover" alt="Luxury Pool" />
+                <img src="/lantai 2 (4).jpg" className="w-full h-full object-cover" alt="Luxury Pool" />
               </div>
             </div>
           </div>
