@@ -70,7 +70,9 @@ export default function App() {
               </a>
             ))}
             <a
-              href="#kontak"
+              href="https://wa.me/6282140857907"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-2.5 bg-emerald-600 text-white rounded-full text-sm font-semibold hover:bg-emerald-700 transition-all shadow-md active:scale-95"
             >
               Mulai Konsultasi
@@ -107,7 +109,9 @@ export default function App() {
                   </a>
                 ))}
                 <a
-                  href="#kontak"
+                  href="https://wa.me/6282140857907"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full py-4 mt-2 bg-emerald-600 text-white rounded-full text-center font-semibold"
                 >
                   Mulai Konsultasi
@@ -141,10 +145,15 @@ export default function App() {
               Buat website profesional untuk Villa, Rumah, atau Apartemen Anda. Tingkatkan kepercayaan klien dengan desain eksklusif dan fitur listing modern.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold shadow-xl shadow-emerald-200 hover:bg-emerald-700 transition-all flex items-center gap-2 group">
+              <a 
+                href="https://wa.me/6282140857907"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold shadow-xl shadow-emerald-200 hover:bg-emerald-700 transition-all flex items-center gap-2 group"
+              >
                 Buat Website Sekarang
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
               <button className="px-8 py-4 bg-white text-zinc-900 border border-zinc-200 rounded-full font-bold hover:bg-zinc-50 transition-all shadow-sm">
                 Lihat Demo Listing
               </button>
@@ -381,14 +390,17 @@ export default function App() {
                 <p className={`text-sm mb-10 leading-relaxed ${pkg.isPopular ? 'text-emerald-100' : 'text-zinc-400'}`}>
                   {pkg.desc}
                 </p>
-                <button
-                  className={`w-full py-4 mb-10 rounded-2xl font-bold transition-all active:scale-95 ${pkg.isPopular
+                <a
+                  href="https://wa.me/6282140857907"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-4 mb-10 rounded-2xl font-bold transition-all active:scale-95 text-center flex items-center justify-center ${pkg.isPopular
                     ? 'bg-white text-emerald-600 hover:bg-zinc-50 shadow-lg'
                     : 'bg-emerald-600 text-white hover:bg-emerald-700'
                     }`}
                 >
                   Pilih Paket
-                </button>
+                </a>
                 <div className="space-y-5 mb-12">
                   {pkg.features.map((f, i) => (
                     <div key={i} className="flex items-start gap-4 text-sm">
@@ -416,11 +428,16 @@ export default function App() {
             Tim ahli kami siap membantu Anda membangun kehadiran digital yang profesional untuk mempercepat closing unit properti Anda.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="px-12 py-5 bg-emerald-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-emerald-200 hover:bg-emerald-700 transition-all flex items-center gap-4 group">
+            <a 
+              href="https://wa.me/6282140857907"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-12 py-5 bg-emerald-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-emerald-200 hover:bg-emerald-700 transition-all flex items-center gap-4 group"
+            >
               <MessageSquare className="w-6 h-6 fill-current" />
               Hubungi via WhatsApp
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
 
           </div>
         </div>
@@ -464,7 +481,7 @@ export default function App() {
               <li><a href="#tentang" className="hover:text-emerald-600 transition-colors">Tentang Kami</a></li>
               <li><a href="#" className="hover:text-emerald-600 transition-colors">Hasil Project</a></li>
               <li><a href="#" className="hover:text-emerald-600 transition-colors">Testimoni Klien</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition-colors">Hubungi Kami</a></li>
+              <li><a href="https://wa.me/6282140857907" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Hubungi Kami</a></li>
             </ul>
           </div>
 
