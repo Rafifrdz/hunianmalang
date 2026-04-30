@@ -145,7 +145,7 @@ export default function App() {
               Buat website profesional untuk Villa, Rumah, atau Apartemen Anda. Tingkatkan kepercayaan klien dengan desain eksklusif dan fitur listing modern.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a 
+              <a
                 href="https://wa.me/6282140857907"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -186,7 +186,7 @@ export default function App() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-100 h-[400px] md:h-[550px] group">
               <img
-                src="/Villa bambu.jpg"
+                src="/villabanner.png"
                 alt="Luxury Modern Villa"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -204,16 +204,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Floating UI Elements */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 bg-white p-5 rounded-2xl shadow-xl border border-zinc-50 flex items-center gap-4"
-            >
 
-
-
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -282,7 +273,7 @@ export default function App() {
             </div>
             <div className="space-y-4 pt-12">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="/Villa bambu.jpg" className="w-full h-full object-cover" alt="Kitchen Design" />
+                <img src="/villabanner.png" className="w-full h-full object-cover" alt="Kitchen Design" />
               </div>
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <img src="/lantai 2 (4).jpg" className="w-full h-full object-cover" alt="Luxury Pool" />
@@ -391,7 +382,7 @@ export default function App() {
                   {pkg.desc}
                 </p>
                 <a
-                  href="https://wa.me/6282140857907"
+                  href={`https://wa.me/6282140857907?text=${encodeURIComponent(`Halo, saya tertarik dan ingin berkonsultasi lebih lanjut terkait paket ${pkg.name}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-4 mb-10 rounded-2xl font-bold transition-all active:scale-95 text-center flex items-center justify-center ${pkg.isPopular
@@ -428,8 +419,8 @@ export default function App() {
             Tim ahli kami siap membantu Anda membangun kehadiran digital yang profesional untuk mempercepat closing unit properti Anda.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a 
-              href="https://wa.me/6282140857907"
+            <a
+              href={`https://wa.me/6282140857907?text=${encodeURIComponent("Halo, saya ingin berkonsultasi mengenai pembuatan website properti.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-12 py-5 bg-emerald-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-emerald-200 hover:bg-emerald-700 transition-all flex items-center gap-4 group"
