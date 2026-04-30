@@ -34,14 +34,14 @@ export default function App() {
 
   const layouts = [
     { id: 1, src: '/web1.png', name: 'Modern Elite' },
-    { id: 2, src: '/web1.png', name: 'Villa Panoramic' },
-    { id: 3, src: '/web1.png', name: 'Estate Enterprise' },
+    { id: 2, src: '/web2.png', name: 'Villa Panoramic' },
+    { id: 3, src: '/web3.png', name: 'Estate Enterprise' },
     { id: 4, src: '/web1.png', name: 'Luxury Living' },
-    { id: 5, src: '/web1.png', name: 'Minimalist Studio' },
-    { id: 6, src: '/web1.png', name: 'Urban Apartment' },
+    { id: 5, src: '/web2.png', name: 'Minimalist Studio' },
+    { id: 6, src: '/web3.png', name: 'Urban Apartment' },
     { id: 7, src: '/web1.png', name: 'Cozy Cottage' },
-    { id: 8, src: '/web1.png', name: 'Beach House' },
-    { id: 9, src: '/web1.png', name: 'Smart Home' }
+    { id: 8, src: '/web2.png', name: 'Beach House' },
+    { id: 9, src: '/web3.png', name: 'Smart Home' }
   ];
 
   const nextLayout = () => setCurrentLayout((prev) => (prev + 1) % layouts.length);
@@ -66,7 +66,7 @@ export default function App() {
     <div className="min-h-screen bg-[#f8f9fa] text-zinc-900 overflow-x-hidden">
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-4'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
@@ -141,7 +141,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 overflow-hidden">
+      <section className="relative pt-24 pb-20 md:pt-26 md:pb-32 px-4 overflow-hidden">
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-emerald-50/50 rounded-bl-[100px] hidden md:block"></div>
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-emerald-100/30 rounded-full blur-3xl"></div>
 
@@ -296,7 +296,7 @@ export default function App() {
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#dcdfe3] to-transparent pointer-events-none" />
 
         <div className="max-w-[1800px] mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 md:mb-16 tracking-tight text-zinc-800">Layout</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 md:mb-16 tracking-tight text-zinc-800">Portofolio</h2>
 
           <div className="relative h-[280px] md:h-[420px] flex items-center justify-center" style={{ perspective: '1800px' }}>
             {/* Navigation Arrows */}
@@ -479,7 +479,7 @@ export default function App() {
         </div>
       </section>
       {/* Pricing Section */}
-      <section id="harga" className="py-24 bg-zinc-900 text-white px-4 relative overflow-hidden">
+      <section id="harga" className="py-20 bg-zinc-900 text-white px-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px]"></div>
 
@@ -491,68 +491,69 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
             {[
               {
                 name: 'Essential Home',
                 price: 'Rp 1.500.000',
                 desc: 'Ideal untuk agen properti perorangan yang baru mulai.',
-                features: ["Include Hosting 1 tahun", "Free Copywriting", "Integrasi Google Maps", "Tombol CTA WhatsApp", "Formulir Kontak / Email", "Free Domain 1 tahun (.com, .id, dll)", "Optimasi SEO Basic", "Free SSL / Keamanan", "Mobile Friendly", "Gratis Revisi Minor (kecil)", "Optimasi Kecepatan (Lazy Load + Caching Tools)", "4x Revisi Mayor (besar)"
+                features: ["Include Hosting 1 tahun", "Free Copywriting", "Integrasi Google Maps", "Tombol CTA WhatsApp", "Formulir Kontak / Email", "Free Domain 1 tahun", "Optimasi SEO Basic", "Free SSL / Keamanan", "Mobile Friendly", "Gratis Revisi Minor", "Optimasi Kecepatan", "4x Revisi Mayor"
                 ],
                 isPopular: false
               },
               {
                 name: 'Villa Business',
                 price: 'Rp 3.000.000',
-                desc: 'Pilihan paling populer untuk kantor agen & penyewaan villa.',
-                features: ["Free Copywriting", "Tampilan Modern - Tamu Auto Trust", "Include Hosting 1 tahun", "Sistem Booking WA Otomatis", "Tombol CTA WhatsApp", "Integrasi Google Maps", "4-5 Halaman", "Mobile Friendly", "Optimasi SEO Basic", "Desain Visual Lebih Kompleks (CTA, Form, Galeri)", "Free Domain 1 tahun (.com, .id, dll)", "Gallery Paket Wisata", "SSL & Keamanan Premium", "Gratis Revisi Minor (kecil)", "6x Revisi Mayor (besar)", "Garansi Maintenance 1 Bulan", "Optimasi Kecepatan (Lazy Load + Caching Tools)"],
+                desc: 'Pilihan populer untuk kantor agen & penyewaan villa.',
+                features: ["Free Copywriting", "Tampilan Modern", "Include Hosting 1 tahun", "Sistem Booking WA", "Tombol CTA WhatsApp", "Integrasi Google Maps", "4-5 Halaman", "Mobile Friendly", "Optimasi SEO Basic", "Desain Visual Kompleks", "Free Domain 1 tahun", "SSL & Keamanan Premium", "Maintenance 1 Bulan", "Optimasi Kecepatan"],
                 isPopular: true
               },
               {
-                name: 'Real Estate Enterprise',
+                name: 'Enterprise',
                 price: 'Custom',
-                desc: 'Solusi lengkap untuk developer perumahan & korporat.',
-                features: ["Fokus pada Trust", "Include Hosting 1 tahun", "Sistem Booking & Payment Gateway", "Tombol CTA WhatsApp", "Integrasi Google Maps", "Free Copywriting", "5–7 Halaman Utama (Home, About Us, Tour Packages, Gallery, Blog, Contact, Testimonial)", "Mobile Friendly", "Optimasi SEO Basic", "Design Modern", "Free Domain 1 tahun (.com, .id, dll)", "Gallery Paket Wisata", "SSL & Keamanan Premium", "Gratis Revisi Minor (kecil)", "6x Revisi Mayor (besar)", "Garansi Maintenance 1 Bulan", "Optimasi Kecepatan (Lazy Load + Caching Tools)"],
+                desc: 'Solusi lengkap untuk developer & korporat.',
+                features: ["Fokus pada Trust", "Include Hosting 1 tahun", "Sistem Booking & Payment", "Tombol CTA WhatsApp", "Integrasi Google Maps", "Free Copywriting", "5–7 Halaman Utama", "Mobile Friendly", "Optimasi SEO Basic", "Design Modern", "Free Domain 1 tahun", "Maintenance 1 Bulan", "Optimasi Kecepatan"],
                 isPopular: false
               }
             ].map((pkg, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -10 }}
-                className={`relative p-10 rounded-[32px] border transition-all duration-300 ${pkg.isPopular
-                  ? 'bg-emerald-600 border-emerald-500 shadow-3xl shadow-emerald-500/20 scale-105 z-10'
-                  : 'bg-zinc-800/50 border-zinc-700 backdrop-blur-sm'
+                whileHover={{ y: -5 }}
+                className={`relative p-6 rounded-2xl border transition-all duration-300 flex flex-col ${pkg.isPopular
+                  ? 'bg-emerald-600 border-emerald-500 shadow-2xl shadow-emerald-500/20 scale-105 z-10'
+                  : 'bg-zinc-800/40 border-zinc-700/50 backdrop-blur-sm'
                   }`}
               >
                 {pkg.isPopular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-emerald-600 px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.2em] shadow-xl">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-emerald-600 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.1em] shadow-xl">
                     Paling Laris
                   </div>
                 )}
-                <h3 className="text-2xl font-bold mb-3">{pkg.name}</h3>
-                <div className="flex items-baseline gap-1 mb-6">
-                  <span className="text-4xl font-black">{pkg.price}</span>
-                  {pkg.price !== 'Custom' && <span className="text-sm opacity-50 font-medium">/sekali bayar</span>}
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-black">{pkg.price}</span>
+                    {pkg.price !== 'Custom' && <span className="text-[10px] opacity-50">/unit</span>}
+                  </div>
                 </div>
-                <p className={`text-sm mb-10 leading-relaxed ${pkg.isPopular ? 'text-emerald-100' : 'text-zinc-400'}`}>
-                  {pkg.desc}
-                </p>
+
                 <a
-                  href={`https://wa.me/6282140857907?text=${encodeURIComponent(`Halo, saya tertarik dan ingin berkonsultasi lebih lanjut terkait paket ${pkg.name}`)}`}
+                  href={`https://wa.me/6282140857907?text=${encodeURIComponent(`Halo, saya tertarik paket ${pkg.name}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full py-4 mb-10 rounded-2xl font-bold transition-all active:scale-95 text-center flex items-center justify-center ${pkg.isPopular
-                    ? 'bg-white text-emerald-600 hover:bg-zinc-50 shadow-lg'
+                  className={`w-full py-2.5 mb-6 rounded-xl font-bold transition-all active:scale-95 text-center text-xs ${pkg.isPopular
+                    ? 'bg-white text-emerald-600 hover:bg-zinc-50'
                     : 'bg-emerald-600 text-white hover:bg-emerald-700'
                     }`}
                 >
                   Pilih Paket
                 </a>
-                <div className="space-y-5 mb-12">
+
+                <div className="space-y-2.5">
                   {pkg.features.map((f, i) => (
-                    <div key={i} className="flex items-start gap-4 text-sm">
-                      <CheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${pkg.isPopular ? 'text-emerald-200' : 'text-emerald-500'}`} />
-                      <span className="opacity-90">{f}</span>
+                    <div key={i} className="flex items-start gap-2.5 text-[12px]">
+                      <CheckCircle className={`w-3.5 h-3.5 flex-shrink-0 mt-0.5 ${pkg.isPopular ? 'text-emerald-200' : 'text-emerald-500'}`} />
+                      <span className="opacity-80 leading-tight">{f}</span>
                     </div>
                   ))}
                 </div>
