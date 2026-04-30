@@ -52,10 +52,10 @@ export default function App() {
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="text-3xl font-bold font-display tracking-tight transition-colors">
-              Hunian<span className="text-emerald-600">malang</span>
-            </span>
+          <div className="flex items-center gap-3">
+            <a href="https://hunianmalang.vercel.app/">
+              <img src="/logohm.png" alt="Hunian Malang Logo" className="w-10 h-10 object-contain" />
+            </a>
           </div>
 
           {/* Desktop Nav */}
@@ -437,11 +437,8 @@ export default function App() {
       <footer className="bg-zinc-50 pt-24 pb-12 border-t border-zinc-200 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-20 text-center md:text-left">
           <div className="md:col-span-1">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-8">
-              <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                <Home className="w-5 h-5" />
-              </div>
-              <span className="text-4xl font-bold font-display">Hunian<span className="text-emerald-600">malang</span></span>
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-8">
+              <img src="/logohm.png" alt="Hunian Malang Logo" className="w-12 h-12 object-contain" />
             </div>
             <p className="text-zinc-500 leading-relaxed mb-8">
               Solusi digital premium untuk agen real estate, villa owner, dan developer properti di seluruh Indonesia.
