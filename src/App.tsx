@@ -22,12 +22,30 @@ import {
   Users,
   MapPin,
   Camera,
-  Layout
+  Layout,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentLayout, setCurrentLayout] = useState(0);
+
+  const layouts = [
+    { id: 1, src: '/web1.png', name: 'Modern Elite' },
+    { id: 2, src: '/web1.png', name: 'Villa Panoramic' },
+    { id: 3, src: '/web1.png', name: 'Estate Enterprise' },
+    { id: 4, src: '/web1.png', name: 'Luxury Living' },
+    { id: 5, src: '/web1.png', name: 'Minimalist Studio' },
+    { id: 6, src: '/web1.png', name: 'Urban Apartment' },
+    { id: 7, src: '/web1.png', name: 'Cozy Cottage' },
+    { id: 8, src: '/web1.png', name: 'Beach House' },
+    { id: 9, src: '/web1.png', name: 'Smart Home' }
+  ];
+
+  const nextLayout = () => setCurrentLayout((prev) => (prev + 1) % layouts.length);
+  const prevLayout = () => setCurrentLayout((prev) => (prev - 1 + layouts.length) % layouts.length);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +63,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f8f9fa] text-zinc-900 overflow-x-hidden">
       {/* Navbar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
@@ -272,10 +290,118 @@ export default function App() {
       </section>
 
 
-      {/* Features Section */}
-      <section id="layanan" className="py-24 bg-zinc-50 px-4">
+      {/* Layout Selection — 3D Perspective Showcase */}
+      <section className="py-16 md:py-24 bg-[#e8eaed] overflow-hidden relative">
+        {/* Subtle gradient floor */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#dcdfe3] to-transparent pointer-events-none" />
+
+        <div className="max-w-[1800px] mx-auto text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 md:mb-16 tracking-tight text-zinc-800">Layout</h2>
+
+          <div className="relative h-[280px] md:h-[420px] flex items-center justify-center" style={{ perspective: '1800px' }}>
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevLayout}
+              aria-label="Previous layout"
+              className="absolute left-4 md:left-[18%] top-[45%] -translate-y-1/2 z-50 text-zinc-300 hover:text-zinc-600 transition-colors active:scale-90"
+            >
+              <ChevronLeft size={40} strokeWidth={1.2} />
+            </button>
+            <button
+              onClick={nextLayout}
+              aria-label="Next layout"
+              className="absolute right-4 md:right-[18%] top-[45%] -translate-y-1/2 z-50 text-zinc-300 hover:text-zinc-600 transition-colors active:scale-90"
+            >
+              <ChevronRight size={40} strokeWidth={1.2} />
+            </button>
+
+            {/* 3D Fan Layout */}
+            <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
+              {layouts.map((layout, index) => {
+                const offset = index - currentLayout;
+                const absOffset = Math.abs(offset);
+                const direction = offset > 0 ? 1 : -1;
+
+                // Elegant rotation: ~40° for neighbors, capping at ~55°
+                const rotateY = offset === 0 ? 0 : direction * -(35 + Math.min(absOffset - 1, 3) * 5);
+                // Tighter spacing so cards overlap like in the reference
+                const xShift = offset === 0 ? 0 : direction * (200 + (absOffset - 1) * 120);
+                // Push further back progressively
+                const zShift = offset === 0 ? 60 : (100 + absOffset * 1);
+                // Center card is largest
+                const cardScale = offset === 0 ? 1.05 : Math.max(0.6, 0.82 - absOffset * 0.04);
+                // Fade out gracefully
+                const cardOpacity = absOffset > 4 ? 0 : Math.max(0.25, 1 - absOffset * 0.18);
+
+                return (
+                  <motion.div
+                    key={layout.id}
+                    initial={false}
+                    animate={{
+                      rotateY,
+                      x: xShift,
+                      z: zShift,
+                      scale: cardScale,
+                      opacity: cardOpacity,
+                    }}
+                    transition={{ type: 'spring', stiffness: 120, damping: 22 }}
+                    className="absolute cursor-pointer"
+                    style={{
+                      width: 'clamp(150px, 18vw, 280px)',
+                      aspectRatio: '3 / 4',
+                      transformStyle: 'preserve-3d',
+                      zIndex: 100 - absOffset,
+                      filter: absOffset > 0 ? `blur(${Math.min(absOffset * 0.4, 1.5)}px)` : 'none',
+                    }}
+                    onClick={() => setCurrentLayout(index)}
+                  >
+                    {/* Card */}
+                    <div
+                      className="w-full h-full bg-white rounded-lg overflow-hidden border border-zinc-200/80"
+                      style={{
+                        boxShadow: offset === 0
+                          ? '0 30px 80px -15px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.04)'
+                          : '0 20px 50px -15px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.03)',
+                      }}
+                    >
+                      <img
+                        src={layout.src}
+                        alt={`Website layout ${layout.name}`}
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Floor Reflection */}
+                    <div
+                      className="absolute left-0 w-full overflow-hidden pointer-events-none rounded-lg"
+                      style={{
+                        top: '100%',
+                        height: '35%',
+                        transform: 'scaleY(-1)',
+                        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.25), transparent 70%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.25), transparent 70%)',
+                      }}
+                    >
+                      <img
+                        src={layout.src}
+                        className="w-full h-full object-cover object-top opacity-40"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section — Alternating Zigzag */}
+      <section id="layanan" className="py-24 bg-white px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <span className="text-emerald-600 font-bold tracking-widest text-xs uppercase mb-3 block">Fitur Unggulan</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Teknologi Terbaik untuk Penjualan Aset</h2>
             <p className="text-zinc-600 max-w-2xl mx-auto">
@@ -283,39 +409,70 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="space-y-24 md:space-y-32">
             {[
               {
-                icon: <Layout className="text-emerald-600" />,
-                title: 'Property Management',
-                desc: 'Kelola listing rumah, vila, atau tanah dengan mudah melalui dashboard yang user-friendly.'
+                title: 'Mudah Dioperasikan',
+                desc: 'Kami membuat sistem website property yang fungsionalitasnya mudah untuk Anda gunakan dan operasikan. Tidak perlu keahlian teknis — cukup klik dan kelola.',
+                bullets: ['Tutorial Penggunaan PDF', 'Tutorial Penggunaan Video', 'Support & Bantuan Teknis'],
+                image: '/fitur1.png',
               },
               {
-                icon: <MapPin className="text-emerald-600" />,
-                title: 'Google Maps Integration',
-                desc: 'Tampilkan lokasi akurat properti Anda lengkap dengan area fasilitas umum terdekat.'
+                title: 'Halaman Admin Panel',
+                desc: 'Memudahkan Anda dalam mengelola konten website property secara keseluruhan, mulai dari pasang listing sampai posting artikel.',
+                bullets: ['Dashboard Intuitif', 'Upload Foto & Video', 'Edit Konten Real-time'],
+                image: '/fitur2.png',
               },
               {
-                icon: <Camera className="text-emerald-600" />,
-                title: 'High-Res Gallery',
-                desc: 'Optimasi gambar agar tetap tajam namun ringan, memastikan visual properti tampil maksimal.'
+                title: 'Statistik Kunjungan',
+                desc: 'Dilengkapi laporan statistik pengunjung tiap listing yang memberikan informasi terperinci tentang jumlah pengunjung, sumber, dan halaman yang paling banyak dikunjungi.',
+                bullets: ['Laporan Harian & Bulanan', 'Sumber Trafik Detail', 'Analisis Perilaku Pengunjung'],
+                image: '/fitur3.png',
               },
               {
-                icon: <Settings className="text-emerald-600" />,
-                title: 'Smart Search & Filter',
-                desc: 'Mudahkan klien mencari properti berdasarkan harga, lokasi, atau tipe bangunan.'
-              }
+                title: 'SEO Booster',
+                desc: 'Dilengkapi SEO booster untuk website property Anda untuk meningkatkan ranking pencarian search engine agar mudah ditemukan calon pembeli.',
+                bullets: ['Meta Tags Otomatis', 'Sitemap Generator', 'Optimasi Kecepatan'],
+                image: '/fitur4.png',
+              },
             ].map((feature, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl border border-zinc-100 shadow-sm transition-all"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className={`grid md:grid-cols-2 gap-12 md:gap-20 items-center ${idx % 2 === 1 ? 'md:[direction:rtl]' : ''}`}
               >
-                <div className="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center mb-8">
-                  {feature.icon}
+                {/* Text Side */}
+                <div className={idx % 2 === 1 ? 'md:[direction:ltr]' : ''}>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-900">{feature.title}</h3>
+                  <p className="text-zinc-600 leading-relaxed mb-6">{feature.desc}</p>
+                  <ul className="space-y-3">
+                    {feature.bullets.map((bullet, i) => (
+                      <li key={i} className="flex items-center gap-3 text-sm text-zinc-700">
+                        <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                          <CheckCircle className="w-4 h-4 text-emerald-600" />
+                        </div>
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-zinc-600 text-sm leading-relaxed">{feature.desc}</p>
+
+                {/* Image Side */}
+                <div className={`relative ${idx % 2 === 1 ? 'md:[direction:ltr]' : ''}`}>
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-100 bg-zinc-50">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  {/* Decorative blob */}
+                  <div className={`absolute -z-10 w-72 h-72 rounded-full blur-[80px] opacity-30 bg-emerald-200 ${idx % 2 === 0 ? '-top-10 -right-10' : '-top-10 -left-10'}`} />
+                </div>
               </motion.div>
             ))}
           </div>
