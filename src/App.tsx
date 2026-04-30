@@ -187,7 +187,7 @@ export default function App() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-100 h-[400px] md:h-[550px] group">
               <img
                 src="/villabanner.png"
-                alt="Luxury Modern Villa"
+                alt="Desain Website Villa Eksklusif Malang - Hunian Malang"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -214,18 +214,18 @@ export default function App() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img src="/lantai 1 (8).jpg" className="w-full h-full object-cover" alt="Modern House" />
+                <img src="/lantai 1 (8).jpg" className="w-full h-full object-cover" alt="Interior Properti Mewah Malang" />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="/Meeting.jpg" className="w-full h-full object-cover" alt="Villa Interior" />
+                <img src="/Meeting.jpg" className="w-full h-full object-cover" alt="Ruang Meeting Modern Real Estate" />
               </div>
             </div>
             <div className="space-y-4 pt-12">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="/villabanner.png" className="w-full h-full object-cover" alt="Kitchen Design" />
+                <img src="/villabanner.png" className="w-full h-full object-cover" alt="Landing Page Villa Malang" />
               </div>
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img src="/lantai 2 (4).jpg" className="w-full h-full object-cover" alt="Luxury Pool" />
+                <img src="/lantai 2 (4).jpg" className="w-full h-full object-cover" alt="Fasilitas Kolam Renang Villa" />
               </div>
             </div>
           </div>
